@@ -1,0 +1,106 @@
+Book Table
+Purpose: To store all books available in the store.
+Columns:
+book_id (Primary Key)INT
+title VARCHAR
+publication_year DATE
+publisher_id (Foreign Key) INT
+price - The cost of the book. DECIMAL
+quantity - The number of copies available in the store. INT
+
+Author Table
+Purpose: To list all authors.
+Columns:
+author_id (Primary Key)INT
+author_name VARCHAR
+
+Book_Author Table
+Purpose: To manage the many-to-many relationship between books and authors.
+Columns:
+book_id (Foreign Key)INT
+author_id (Foreign Key)INT
+
+Book_Language Table
+Purpose: To list the possible languages of books.
+Columns:
+language_id (Primary Key)INT
+language_name VARCHAR
+
+Publisher Table
+Purpose: To list publishers of books.
+Columns:
+publisher_id (Primary Key)INT
+publisher_name VARCHAR
+country_id(FK)INT
+
+Customer Table
+Purpose: To list the bookstore's customers.
+Columns:
+customer_id (Primary Key)INT
+customer_name VARCHAR
+email VARCHAR
+phone - INT
+
+Customer_Address Table
+Purpose: To list addresses for customers. 
+Columns:
+customer_address(Primary Key)VARCHAR
+customer_id (FK)INT
+status_id (FK) INT
+country_id (FK)INT
+
+Address_Status Table
+Purpose: To list statuses for an address (e.g., current, old).
+Columns:
+status_id (Primary Key)INT
+status_name VARCHAR
+
+Address Table
+Purpose: To list all addresses in the system.
+Columns:
+address_id (Primary Key)INT
+city VARCHAR
+country_id (Foreign Key)INT
+
+Country Table
+Purpose: To list countries where the addresses are located.
+Columns:
+country_id (Primary Key)INT
+country_name VARCHAR
+
+Cust_Order Table
+Purpose: To list orders placed by customers.
+Columns:
+order_id (Primary Key)INT
+customer_id (Foreign Key)INT
+order_date DATE
+shipping_method_id (FK)INT  
+status_id (FK) INT
+
+Order_Line Table
+Purpose: To list books that are part of each order.
+Columns:
+order_line_id (Primary Key)INT
+order_id (Foreign Key)INT
+book_id (Foreign Key)INT
+quantity INT
+
+Shipping_Method Table
+Purpose: To list possible shipping methods for an order.
+Columns:
+shipping_method_id (Primary Key)INT
+method_name VARCHAR(e.g., Standard, Express, Pickup)
+
+Order_History Table
+Purpose: To record the history of an order (e.g., ordered, cancelled, delivered).
+Columns:
+history_id (Primary Key)INT
+order_id (Foreign Key)INT
+status_id (Foreign Key)INT
+time TIME
+
+Order_Status Table
+Purpose: To list possible statuses for an order.
+Columns:
+status_id (FK)INT             
+status_name(FK)(e.g., pending, shipped, delivered). VARCHAR                                                               order_id(FK)INTBook Table
