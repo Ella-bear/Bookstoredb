@@ -1,7 +1,9 @@
--- Create the database
+-- Create database
 CREATE DATABASE bookstore;
 
 USE bookstore;
+
+-- Bookstore Database Schema with Tables
 
 -- Country Table 
 CREATE TABLE Country (
@@ -133,3 +135,16 @@ CREATE TABLE Order_History (
 );
 
 
+-- creating users
+
+-- user one was Cynthia
+CREATE USER'admin1'@'%'
+IDENTIFIED BY 'name123';
+
+GRANT ALL PRIVILEGES ON bookstore_db.* TO'admin1'@'%' WITH GRANT OPTION;
+
+-- user two was Enock
+CREATE USER'admin2'@'%'
+IDENTIFIED BY 'name100';
+
+GRANT ALL PRIVILEGES ON bookstore_db.* TO'admin2'@'%' WITH GRANT OPTION;
