@@ -148,3 +148,23 @@ CREATE USER'admin2'@'%'
 IDENTIFIED BY 'name100';
 
 GRANT ALL PRIVILEGES ON bookstore_db.* TO'admin2'@'%' WITH GRANT OPTION;
+
+
+-- queries performed 
+TRUNCATE TABLE Book;
+
+SELECT * FROM Country WHERE country_id = 2;
+-- DELETE 
+DROP INDEX idxEnglish ON Book_Language;
+--RIGHT JOIN
+use bookstore;
+SELECT 
+    order_id,
+    order_date,
+    customer_id,
+    customer_name,
+    email
+FROM Cust_Order 
+RIGHT JOIN Customer  ON customer_id = customer_id;
+
+
